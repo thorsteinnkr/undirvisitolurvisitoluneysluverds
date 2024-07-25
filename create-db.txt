@@ -1,0 +1,5 @@
+CREATE TABLE `vnv` (
+	`heiti` VARCHAR(255),
+	`man` VARCHAR(7),
+	`gildi` FLOAT
+);
