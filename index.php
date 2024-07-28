@@ -8,8 +8,8 @@
   print("<h2>".$man." / ".$far."</h2>");
 
   $mydb=new mysqli("localhost","dbuser","dbpassword","dbname");
-  if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  if ($mydb -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mydb -> connect_error;
     exit();
   }
 
