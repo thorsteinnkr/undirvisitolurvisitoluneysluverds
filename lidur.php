@@ -1,14 +1,14 @@
 <?php
 
   $lidur=(isset($_REQUEST['lidur'])?$_REQUEST['lidur']:"Vísitala neysluverðs");
-  $far=(substr($man,0,4)-1).substr($man,4,3);
+  //$far=(substr($man,0,4)-1).substr($man,4,3);
 
   print("<h2>".$lidur."</h2>");
   print("<h3>Breyting á 12 mánaða tímabili</h3>");
 
   $mydb=new mysqli("localhost","dbuser","dbpassword","dbname");
-  if ($mysqli -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+  if ($mydb -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $mydb -> connect_error;
     exit();
   }
 
