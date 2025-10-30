@@ -12,7 +12,7 @@
   print("<h2>".$lidur."</h2>");
   print("<h3>Breyting &aacute; 12 m&aacute;na&eth;a t&iacute;mabili</h3>");
 
-  $mydb=new mysqli("localhost","dbuser","dbpassword","dbname");
+  $mydb=new mysqli("sql301.infinityfree.com","if0_36987692","QF48g036zr2yAcj","if0_36987692_uvn");
   if ($mydb -> connect_errno) {
     echo "Failed to connect to MySQL: " . $mydb -> connect_error;
     exit();
@@ -33,7 +33,7 @@
     if(isset($gildi[$far])){
       $p=number_format(($v/$gildi[$far]-1)*100,1);
       $style="color:#133942;";
-      if($p>7.5){
+      /*if($p>7.5){
         $style="color:red;background-color:yellow;";
       }
       else if($p>2.5){
@@ -42,8 +42,23 @@
       if($p<0){
         $style="color:green;";
       }
+      */
+    if ($p>15){
+      $style='color:white;background-color:black;';  
+    } else if ($p>10){
+      $style='color:yellow;background-color:red;';  
+    } else if($p>7.5){
+      $style='color:red;background-color:gold;';
+    } else if($p>5){
+      $style='color:red;background-color:yellow;';
+    } else if($p>2.5){
+      $style='color:red;';
+    } else if($p<0){
+      $style='background-color:lightgreen;';
+    }
+
       $n++;      
-      print("<span style='".$style."'>".$k." [".$v."]: ".$p."%</span>".($p>2.5?str_repeat("&#128681",floor(($p)/2.5)):"").($n%12==0?"<hr>":"<br>"));
+      print("<span style='".$style."'>".$k." [".$v."]: ".$p."%</span>".($n%12==0?"<hr>":"<br>"));//.($p>2.5?str_repeat("&#128681",floor(($p)/2.5)):"")
     }
   }
 
